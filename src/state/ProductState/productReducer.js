@@ -4,7 +4,8 @@ export const initialState = {
     loading: false,
     products: [],
     error: false,
-    cart: []
+    cart: [],
+    whitelist: []
 }
 export const productReducer = (state, action) => {
     switch (action.type) {
@@ -34,6 +35,12 @@ export const productReducer = (state, action) => {
             return {
                 ...state,
                 cart: [...state.cart, action.payload]
+            }
+        }
+        case actionTypes.ADD_WHITE_LIST: {
+            return {
+                ...state,
+                whitelist: [...state.whitelist, action.payload]
             }
         }
         default: { return state }
