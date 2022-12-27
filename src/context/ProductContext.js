@@ -6,7 +6,7 @@ const ProductContext = ({ children }) => {
     const [state, dispatch] = useReducer(productReducer, initialState)
     useEffect(() => {
         dispatch({ type: actionTypes.FETCHING_START })
-        fetch("http://localhost:5000/products")
+        fetch("https://moon-tech-server-8wyt.onrender.com/products")
             .then(res => res.json())
             .then(data => dispatch({ type: actionTypes.FETCHING_SUCCESS, payload: data.data }))
             .catch(() => dispatch({ type: actionTypes.FETCHING_ERROR }))
