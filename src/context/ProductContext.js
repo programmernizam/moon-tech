@@ -12,7 +12,7 @@ const ProductContext = ({ children }) => {
             .catch(() => dispatch({ type: actionTypes.FETCHING_ERROR }))
     }, [])
     const value = {
-        state
+        state, dispatch
     }
     return (
         <PRODUCT_CONTEXT.Provider value={value}>
